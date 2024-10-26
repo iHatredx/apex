@@ -1,0 +1,63 @@
+{
+    "version": 8,
+    "name": "Galactic Custom Style",
+    "sources": {
+        "background": {
+            "type": "image",
+            "url": "https://media.istockphoto.com/id/178149253/photo/deep-space-background.jpg?s=612x612&w=0&k=20&c=w1hb2H1C-blV918LoG9mGB02nJY6cLJpR5Szfg7sLqE=",
+            "coordinates": [
+                [-180, 85],
+                [180, 85],
+                [180, -85],
+                [-180, -85]
+            ]
+        }
+    },
+    "layers": [
+        {
+            "id": "background",
+            "type": "raster",
+            "source": "background",
+            "layout": {
+                "visibility": "visible"
+            },
+            "paint": {
+                "raster-opacity": 0.8
+            }
+        },
+        {
+            "id": "land",
+            "type": "background",
+            "paint": {
+                "background-color": "#000000"
+            }
+        },
+        {
+            "id": "water",
+            "type": "fill",
+            "source": "mapbox",
+            "source-layer": "water",
+            "paint": {
+                "fill-color": "#0a0a2a"
+            }
+        },
+        {
+            "id": "places",
+            "type": "symbol",
+            "source": "mapbox",
+            "source-layer": "place_label",
+            "layout": {
+                "text-field": "{name_en}",
+                "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
+                "text-size": 12
+            },
+            "paint": {
+                "text-color": "#ffffff",
+                "text-halo-color": "#000000",
+                "text-halo-width": 1
+            }
+        }
+    ],
+    "glyphs": "mapbox://fonts/mapbox/{fontstack}/{range}.pbf",
+    "sprite": "mapbox://sprites/mapbox/streets-v11"
+}
